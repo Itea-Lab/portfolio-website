@@ -1,15 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./language-context";
+import Header from "./components/Layout";
+import Home from "./pages/Home";
+import "./App.css";
+import Error404 from "./pages/Error404";
 
 function App() {
-
+  
   return (
     <>
-      <h1 className='font-bold'>Hello Itea Lab</h1>
+      <LanguageProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Header />}>
+              <Route index element={<Home />} />
+            </Route>
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+          <Routes></Routes>
+        </BrowserRouter>
+      </LanguageProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
