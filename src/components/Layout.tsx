@@ -10,7 +10,7 @@ export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log("isMenuOpen:", isMenuOpen);
+    // console.log("isMenuOpen:", isMenuOpen);
   };
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -24,49 +24,65 @@ export default function Layout() {
   }, []);
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/90 backdrop-blur-sm shadow-sm py-2"
+            : "bg-transparent py-4"
+        }`}
+      >
         <div className="container px-7 mx-auto md:px-[6rem] py-4 flex justify-between items-center">
           <div className="flex flex-row items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <img src={icon} alt="ITea Lab Logo" className="h-15 w-auto" />
-              <span className="font-bold text-xl">ITea Lab</span>
+              <img
+                src={icon}
+                alt="ITea Lab Logo"
+                className={`h-15 w-auto ${scrolled ? "" : "opacity-0"}`}
+              />
+              <span
+                className={`font-bold text-xl ${
+                  scrolled ? "text-[#004243]" : "hidden"
+                }`}
+              >
+                ITea Lab
+              </span>
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 text-[#004243]">
             <a
               href="#about"
-              className="text-lg font-medium hover:text-gray-600 transition-colors"
+              className="text-lg font-medium hover:text-black transition-colors"
             >
-              About
+              ABOUT
             </a>
             <Link
               to="/projects"
-              className="text-lg font-medium hover:text-gray-600 transition-colors"
+              className="text-lg font-medium hover:text-black transition-colors"
             >
-              Projects
+              PROJECTS
             </Link>
             <Link
               to="#join_lab"
-              className="text-lg font-medium hover:text-gray-600 transition-colors"
+              className="text-lg font-bold hover:text-black transition-colors"
             >
-              Join Us
+              JOIN US
             </Link>
           </nav>
           <label
             className="md:hidden flex items-center burger"
             htmlFor="burger"
           >
-            <input type="checkbox" id="burger" onClick={toggleMenu}></input>
+            <input type="checkbox" id="burger" onClick={toggleMenu} checked={isMenuOpen}></input>
             <span></span>
             <span></span>
             <span></span>
           </label>
         </div>
-        <Language_Selector />
+        <Language_Selector scrolled={scrolled} />
       </header>
-      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-      <main className="pt-16 flex-1">
+      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} onToggle={toggleMenu}/>
+      <main className="flex-1">
         <Outlet />
       </main>
       <footer className="w-full bg-[#e7f3ea] relative overflow-hidden">

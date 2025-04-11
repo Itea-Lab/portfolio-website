@@ -7,10 +7,11 @@ import { useLanguage } from "../language-context";
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  onToggle: () => void;
 }
 
-export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
-  const { language, setLanguage, t } = useLanguage();
+export default function MobileMenu({ isOpen, onClose, onToggle }: MobileMenuProps) {
+  const { t } = useLanguage();
 
   // Close menu when pressing Escape key
   useEffect(() => {
@@ -62,7 +63,13 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               className="p-1 rounded-full hover:bg-gray-100 burger"
               htmlFor="burger"
             >
-              <input type="checkbox" id="burger" onClick={onClose} checked></input>
+              <input
+                type="checkbox"
+                id="burger"
+                onClick={onClose}
+                onChange={onToggle}
+                checked={isOpen}
+              ></input>
               <span></span>
               <span></span>
               <span></span>

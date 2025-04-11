@@ -1,5 +1,8 @@
 import { useLanguage } from "../language-context";
-function Language_Selector() {
+interface LanguageSelectorProps {
+  scrolled: boolean;
+}
+export default function Language_Selector({scrolled}: LanguageSelectorProps) {
   const { language, setLanguage } = useLanguage();
 
   return (
@@ -27,4 +30,3 @@ function Language_Selector() {
   );
 }
 
-export default Language_Selector;
