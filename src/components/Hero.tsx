@@ -1,14 +1,31 @@
+import { useEffect, useState } from "react";
 import { useLanguage } from "../language-context";
+import { ChevronDown } from "lucide-react";
 import icon from "../assets/icon_transparent.png";
 function Hero() {
   const { t } = useLanguage();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const scrollToContent = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <div className="hero h-[full] md:h-full bg-[#e2f1e7] relative overflow-hidden">
+    <div className="hero h-screen bg-white relative overflow-x-hidden overflow-y-hidden overflow-hidden">
       <div className="flex flex-col mt-[9rem]">
         <div className="flex justify-start items-center mx-[3rem] md:mx-[7rem]">
           <div className="pt-0 relative z-10">
             <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl text-[#004243] font-bold pt-3">
               {t("hero.headline")}
+            </h1>
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl text-[#44a3a2] font-bold pt-3">
+              {t("hero.headline2")}
             </h1>
             <h3 className="text-3xl sm:text-3xl md:text-5xl lg:text-4xl text-[#004243] pt-3">
               {t("hero.tagline")}
@@ -42,17 +59,18 @@ function Hero() {
             <img src={icon} alt="lab_icon" className="opacity-70 h-svh w-svh" />
           </div>
         </div>
-
-        <div
-          id="about"
-          className="relative z-10 text-center text-[#004243] px-4"
+        <button
+          onClick={scrollToContent}
+          className={`flex flex-col items-center mt-12 animate-bounce transition-opacity duration-700 delay-500 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+          aria-label="Scroll down"
         >
-          <div className="flex flex-col items-center mt-16 animate-bounce">
-            <p className="text-sm font-light tracking-widest mb-2">
-              {t("hero.scroll")}
-            </p>
-          </div>
-        </div>
+          <p className="text-sm font-light tracking-widest mb-2">
+            {t("hero.scroll")}
+          </p>
+          <ChevronDown size={24} />
+        </button>
       </div>
     </div>
   );

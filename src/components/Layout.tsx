@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "../language-context";
 import Language_Selector from "./Language_Selector";
 import MobileMenu from "./Mobile_Menu";
+import { Github, Facebook, Linkedin, Mail } from "lucide-react";
 import icon from "../assets/icon_transparent.png";
 
 export default function Layout() {
@@ -37,11 +38,13 @@ export default function Layout() {
               <img
                 src={icon}
                 alt="ITea Lab Logo"
-                className={`h-15 w-auto ${scrolled ? "" : "opacity-0"}`}
+                className={`h-15 w-auto transition-opacity duration-300 ${
+                  scrolled ? "" : "opacity-0"
+                }`}
               />
               <span
-                className={`font-bold text-xl ${
-                  scrolled ? "text-[#004243]" : "hidden"
+                className={`font-bold text-xl transition-opacity duration-300 ${
+                  scrolled ? "text-[#004243]" : "opacity-0"
                 }`}
               >
                 ITea Lab
@@ -56,24 +59,30 @@ export default function Layout() {
             >
               ABOUT
             </a>
-            <Link
-              to="/projects"
+            <a
+              href="#community"
               className="text-lg font-medium hover:text-black transition-colors"
             >
-              PROJECTS
-            </Link>
-            <Link
-              to="#join_lab"
+              COMMUNITY
+            </a>
+            <a
+              href="#joinUs"
               className="text-lg font-bold hover:text-black transition-colors"
             >
               JOIN US
-            </Link>
+            </a>
           </nav>
           <label
             className="md:hidden flex items-center burger"
             htmlFor="burger"
           >
-            <input type="checkbox" id="burger" onClick={toggleMenu} checked={isMenuOpen}></input>
+            <input
+              type="checkbox"
+              id="burger"
+              onClick={toggleMenu}
+              checked={isMenuOpen}
+              aria-label="toogle menu"
+            ></input>
             <span></span>
             <span></span>
             <span></span>
@@ -81,7 +90,11 @@ export default function Layout() {
         </div>
         <Language_Selector scrolled={scrolled} />
       </header>
-      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} onToggle={toggleMenu}/>
+      <MobileMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        onToggle={toggleMenu}
+      />
       <main className="flex-1">
         <Outlet />
       </main>
@@ -104,12 +117,13 @@ export default function Layout() {
             <h3 className="text-2xl font-bold mb-4">Contact us</h3>
             <div className="flex flex-col space-y-4">
               <div className="flex items-center">
-                <a
-                  href="mailto:contact.itealab@gmail.com"
-                  className="hover:text-[#006a6c]"
+                <Mail size={20} />
+                <Link
+                  to="mailto:contact.itealab@gmail.com"
+                  className="hover:text-[#006a6c] px-1"
                 >
                   contact.itealab@gmail.com
-                </a>
+                </Link>
               </div>
               <div className="flex items-center">
                 <a

@@ -17,7 +17,6 @@ function App() {
               </Route>
               <Route path="*" element={<Error404 />} />
             </Routes>
-            <Routes></Routes>
           </BrowserRouter>
         </div>
       </LanguageProvider>

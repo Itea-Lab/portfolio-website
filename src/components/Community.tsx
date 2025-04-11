@@ -1,29 +1,110 @@
-"use client";
-
+import { useState, useEffect } from "react";
+import { ArrowRight, Github, Calendar } from "lucide-react";
+import event_img from "../assets/480222510_122116886204697575_5941039690238715950_n.jpg";
+import project_img from "../assets/481682077_1017997677053113_5498224049031879829_n.jpg"
 import { useLanguage } from "../language-context";
 import { Link } from "react-router-dom";
 
 export default function Community() {
   const { t } = useLanguage();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const items = [
+    {
+      key: "events",
+      icon: Calendar,
+      image: event_img,
+      alt: "Tech events and workshops",
+      url: "https://www.facebook.com/ITeaLabTeam",
+    },
+    {
+      key: "opensource",
+      icon: Github,
+      image: project_img,
+      alt: "Open source projects",
+      url: "https://github.com/Itea-Lab",
+    },
+  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("community");
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+        setIsVisible(isInView);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="community" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl text-[#004243] font-bold mb-8">
-            {t("community.title")}
-          </h2>
+        <h2
+          className={`text-3xl font-bold text-center text-[#004243] mb-6 transition-opacity duration-700 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {t("community.title")}
+        </h2>
 
-          <div className="mb-6">
-            <p className="mb-2">{t("community.address")}</p>
-          </div>
+        <p
+          className={`text-lg text-center max-w-3xl mx-auto mb-16 transition-opacity duration-700 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {t("community.intro")}
+        </p>
 
-          <Link
-            to="#"
-            className="inline-flex items-center border border-[#004243] px-6 py-3 hover:bg-[#004243] hover:text-white transition-colors"
-          >
-            {t("community.link")}
-          </Link>
+        <div
+          className={`grid md:grid-cols-2 gap-8 max-w-5xl mx-auto transition-opacity duration-700 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {items.map((item, index) => {
+            const ItemIcon = item.icon;
+
+            return (
+              <div
+                key={item.key}
+                className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-500 hover:-translate-y-1"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className="relative h-40 w-full mb-6 rounded-md overflow-hidden group">
+                  <img
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.alt}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-[#e2f1e7] rounded-full flex items-center justify-center mr-4">
+                    <ItemIcon size={20} className="text-[#004243]" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#44a3a2]">
+                    {t(`community.${item.key}.title`)}
+                  </h3>
+                </div>
+                <p className="text-gray-700 mb-6">
+                  {t(`community.${item.key}.text`)}
+                </p>
+                <Link
+                  to={item.url}
+                  className="inline-flex items-center text-sm font-medium text-[#44a3a2] hover:text-[#44a3a2] transition-colors group"
+                >
+                  {t(`community.${item.key}.link`)}
+                  <ArrowRight
+                    size={16}
+                    className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
