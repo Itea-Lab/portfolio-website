@@ -14,7 +14,7 @@ export default function Language_Selector({scrolled}: LanguageSelectorProps) {
             language === "VN" ? "bg-[#004243] text-white" : "hover:bg-gray-100"
           }`}
         >
-          VN
+          JP
         </button>
         <div className="w-full h-px bg-gray-200"></div>
         <button

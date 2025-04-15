@@ -37,7 +37,7 @@ export default function WorkStyle() {
 
       <div className="container mx-auto px-4 relative z-10">
         <h2
-          className={`text-3xl font-bold text-center text-[#004243] mb-6 transition-opacity duration-700 ${
+          className={`text-3xl font-bold text-center text-[#004243] mb-6 transition-opacity duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -45,7 +45,7 @@ export default function WorkStyle() {
         </h2>
 
         <p
-          className={`text-lg text-center max-w-3xl mx-auto mb-16 transition-opacity duration-700 ${
+          className={`text-lg text-center max-w-3xl mx-auto mb-16 transition-opacity duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -53,7 +53,7 @@ export default function WorkStyle() {
         </p>
 
         <div
-          className={`grid md:grid-cols-2 gap-x-12 gap-y-16 max-w-5xl mx-auto transition-opacity duration-700 ${
+          className={`grid md:grid-cols-2 gap-x-12 gap-y-16 max-w-5xl mx-auto transition-opacity duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >

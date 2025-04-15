@@ -57,9 +57,16 @@ export default function MobileMenu({ isOpen, onClose, onToggle }: MobileMenuProp
       >
         <div className="flex flex-col h-full">
           {/* Header */}
+          <div className="mt-16"></div>
           <div className="flex items-center justify-between p-4 border-b">
-            <h2 className="font-bold">Itea Lab</h2>
-            <label
+            <Link to="/" className="flex items-center space-x-2">
+              <span
+                className="font-bold text-xl text-[#004243]"
+              >
+                ITea Lab
+              </span>
+            </Link>
+            {/* <label
               className="p-1 rounded-full hover:bg-gray-100 burger"
               htmlFor="burger"
             >
@@ -73,28 +80,28 @@ export default function MobileMenu({ isOpen, onClose, onToggle }: MobileMenuProp
               <span></span>
               <span></span>
               <span></span>
-            </label>
+            </label> */}
           </div>
 
           {/* Navigation */}
           <nav className="flex-1 p-4">
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-[#44a3a2]">
               <li>
                 <Link
                   to="#career"
-                  className="block py-2 hover:text-gray-600 transition-colors"
+                  className="block py-2 font-medium hover:text-[#004243] transition-colors"
                   onClick={onClose}
                 >
-                  {t("nav.career")}
+                  {t("nav.about")}
                 </Link>
               </li>
               <li>
                 <Link
                   to="#graduates"
-                  className="block py-2 hover:text-gray-600 transition-colors"
+                  className="block py-2 font-medium hover:text-[#004243] transition-colors"
                   onClick={onClose}
                 >
-                  {t("nav.newGraduates")}
+                  {t("nav.joinUs")}
                 </Link>
               </li>
             </ul>

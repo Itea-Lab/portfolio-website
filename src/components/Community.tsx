@@ -42,14 +42,14 @@ export default function Community() {
   }, []);
 
   return (
-    <section id="community" className="py-20 bg-white">
+    <section id="community" className="py-20 bg-[#F9FAFB]">
       <div className="container mx-auto px-4">
         <h2
-          className={`text-3xl font-bold text-center text-[#004243] mb-6 transition-opacity duration-700 ${
+          className={`text-3xl font-bold text-center text-[#004243] mb-6 pt-20 transition-opacity duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          {t("community.title")}
+          {t("community.activities")}
         </h2>
 
         <p
@@ -71,10 +71,10 @@ export default function Community() {
             return (
               <div
                 key={item.key}
-                className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-500 hover:-translate-y-1"
+                className="bg-white hover:bg-[#E7F3EA] p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-500 hover:-translate-y-1"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="relative h-40 w-full mb-6 rounded-md overflow-hidden group">
+                <div className="relative h-60 w-full mb-6 rounded-md overflow-hidden group">
                   <img
                     src={item.image || "/placeholder.svg"}
                     alt={item.alt}
@@ -82,10 +82,10 @@ export default function Community() {
                   />
                 </div>
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-[#e2f1e7] rounded-full flex items-center justify-center mr-4">
+                  <div className="w-10 h-10 bg-[#E7F3EA] rounded-full flex items-center justify-center mr-4">
                     <ItemIcon size={20} className="text-[#004243]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#44a3a2]">
+                  <h3 className="text-xl font-bold text-[#004243]">
                     {t(`community.${item.key}.title`)}
                   </h3>
                 </div>
