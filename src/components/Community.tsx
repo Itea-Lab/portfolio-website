@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Github, Calendar } from "lucide-react";
 import event_img from "../assets/480222510_122116886204697575_5941039690238715950_n.jpg";
-import project_img from "../assets/481682077_1017997677053113_5498224049031879829_n.jpg"
+import project_img from "../assets/481682077_1017997677053113_5498224049031879829_n.jpg";
+import ws_img1 from "../assets/git_github_workshop.png";
+import ws_img2 from "../assets/docker_workshop.png";
 import { useLanguage } from "../language-context";
 import { Link } from "react-router-dom";
 
@@ -9,6 +11,18 @@ export default function Community() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
+  const events = [
+    {
+      name: "Git & Github Workshop",
+      date: "2023-10-01",
+      image: ws_img1,
+    },
+    {
+      name: "Docker Workshop",
+      date: "2023-10-15",
+      image: ws_img2,
+    }
+  ]
   const items = [
     {
       key: "events",
@@ -105,6 +119,32 @@ export default function Community() {
               </div>
             );
           })}
+        </div>
+      </div>
+      <div className="container mx-auto px-[10rem] pt-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {events.map((event, index) => (
+            <div
+              key={event.name}
+              className="relative aspect-square overflow-hidden rounded-lg group"
+            >
+              <img
+                src={event.image}
+                alt={`Event ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white text-sm">
+                  {event.name}
+                </p>
+              </div>
+            </div>
+          ))}
+          <div
+            className="flex aspect-square overflow-hidden rounded-lg group"
+          >
+            
+          </div>
         </div>
       </div>
     </section>

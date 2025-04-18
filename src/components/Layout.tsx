@@ -168,9 +168,6 @@ export default function Layout() {
                 <span className="sr-only">Email</span>
               </Link>
             </div>
-            <div className="mt-12">
-              <p className="text-[#004243]">© 2025 ITea Lab Team.</p>
-            </div>
           </div>
           {/* Middle section - Explore  */}
           <div className="mb-6 md:mb-0 text-[#004243] px-4 md:px-8 flex-grow md:flex-grow-0">
@@ -193,16 +190,31 @@ export default function Layout() {
               </div>
             </div>
           </div>
+          {/* Middle section - Community  */}
+          <div className="mb-6 md:mb-0 text-[#004243] px-4 md:px-8 flex-grow md:flex-grow-0">
+            <h3 className="text-2xl font-bold mb-4">Community</h3>
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center">
+                <a href="#about" className="hover:text-[#006a6c]">
+                  Github
+                </a>
+              </div>
+              <div className="flex items-center">
+                <a href="#community" className="hover:text-[#006a6c]">
+                  Facebook
+                </a>
+              </div>
+              <div className="flex items-center">
+                <a href="#joinUs" className="hover:text-[#006a6c]">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
           {/* Right section - Contact */}
           <div className="mb-6 md:mb-0 text-[#004243] px-4 md:px-8 flex-grow md:flex-grow-0">
             <h3 className="text-2xl font-bold mb-4">Contact</h3>
             <div className="flex flex-col space-y-4">
-              <div className="flex items-center">
-                <p className="hover:text-[#006a6c] w-80">
-                  A35 Bach Dang street, ward 14, Tan Binh district, Ho Chi Minh
-                  city, Vietnam
-                </p>
-              </div>
               <div className="flex items-center">
                 <Link
                   to="mailto:contact.itealab@gmail.com"
@@ -211,12 +223,21 @@ export default function Layout() {
                   contact.itealab@gmail.com
                 </Link>
               </div>
+              <div className="flex items-center">
+                <p className="hover:text-[#006a6c] w-[70%] md:w-[80%]">
+                  A35 Bach Dang street, ward 14, Tan Binh district, Ho Chi Minh
+                  city, Vietnam
+                </p>
+              </div>
             </div>
           </div>
           <div className="absolute bottom-[0rem] right-[-7rem] md:bottom-[] md:right-[-11rem] lg:bottom-[0rem] lg:right-[-10rem] w-[20rem] h-[15rem] md:w-[15rem] md:h-[15rem] lg:w-[20rem] lg:h-[15rem] z-0">
             <img src={icon} className="opacity-70" alt="lab_icon"></img>
           </div>
         </div>
+        {/* <div className="mx-auto py-3 w-[83%] md:w-[88%] flex flex-row justify-start items-center border-t border-mint-200 transition-opacity duration-700">
+          <p className="text-[#004243]">© 2025 ITea Lab Team.</p>
+        </div> */}
       </footer>
     </>
   );

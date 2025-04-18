@@ -19,7 +19,7 @@ function Hero() {
   };
   return (
     <div className="hero h-screen bg-[#e2f1e7] relative overflow-x-hidden overflow-y-hidden overflow-hidden">
-      <div className="flex flex-col mt-[9rem]">
+      <div className="flex flex-col mt-[9rem] mx-5">
         <div className="flex justify-start items-center mx-[3rem] md:mx-[7rem]">
           <div className="pt-0 relative z-10">
             <h1

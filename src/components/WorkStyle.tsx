@@ -30,7 +30,7 @@ export default function WorkStyle() {
   }, []);
 
   return (
-    <section id="workstyle" className="py-20 bg-white relative overflow-hidden">
+    <section id="workstyle" className="pb-20 bg-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute right-0 top-1/4 w-64 h-64 bg-[#f4fff8] rounded-full opacity-70 z-0"></div>
       <div className="absolute left-0 bottom-1/4 w-48 h-48 bg-[#f4fff8] rounded-full opacity-70 z-0"></div>
