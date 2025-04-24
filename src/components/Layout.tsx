@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "../language-context";
 import Language_Selector from "./Language_Selector";
 import MobileMenu from "./Mobile_Menu";
-import { Github, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
+import { Github, Facebook, Linkedin, Mail} from "lucide-react";
 import icon from "../assets/icon_transparent.png";
 
 export default function Layout() {

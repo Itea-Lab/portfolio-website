@@ -59,7 +59,7 @@ export default function Community() {
     <section id="community" className="py-20 bg-[#F9FAFB]">
       <div className="container mx-auto px-4">
         <h2
-          className={`text-3xl font-bold text-center text-[#004243] mb-6 pt-20 transition-opacity duration-1000 ${
+          className={`text-3xl md:text-4xl font-bold text-center text-[#004243] mb-6 pt-20 transition-opacity duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -106,16 +106,6 @@ export default function Community() {
                 <p className="text-gray-700 mb-6">
                   {t(`community.${item.key}.text`)}
                 </p>
-                <Link
-                  to={item.url}
-                  className="inline-flex items-center text-sm font-medium text-[#44a3a2] hover:text-[#44a3a2] transition-colors group"
-                >
-                  {t(`community.${item.key}.link`)}
-                  <ArrowRight
-                    size={16}
-                    className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Link>
               </div>
             );
           })}
@@ -134,17 +124,11 @@ export default function Community() {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <p className="text-white text-sm">
-                  {event.name}
-                </p>
+                <p className="text-white text-sm">{event.name}</p>
               </div>
             </div>
           ))}
-          <div
-            className="flex aspect-square overflow-hidden rounded-lg group"
-          >
-            
-          </div>
+          <div className="flex aspect-square overflow-hidden rounded-lg group"></div>
         </div>
       </div>
     </section>

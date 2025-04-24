@@ -6,9 +6,17 @@ import icon from "../assets/icon_transparent.png";
 function Hero() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToContent = () => {
@@ -91,10 +99,15 @@ function Hero() {
           }`}
           aria-label="Scroll down"
         >
-          <p className="text-sm font-light tracking-widest mb-2">
+          <p className="text-sm text-[#44A3A2] font-light tracking-widest mb-2">
             {t("hero.scroll")}
           </p>
-          <ChevronDown size={24} />
+          <ChevronDown
+            className={`h-6 w-6 ${
+              scrolled ? "text-[#44A3A2]" : "text-[#44A3A2]"
+            }`}
+            size={24}
+          />
         </button>
       </div>
     </div>
