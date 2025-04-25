@@ -26,7 +26,7 @@ function Hero() {
     }
   };
   return (
-    <div className="hero h-screen bg-[#e2f1e7] relative overflow-x-hidden overflow-y-hidden overflow-hidden">
+    <div className="hero h-screen bg-[linear-gradient(105deg,_#E0E6DA,_#F8F5F0)] relative overflow-x-hidden overflow-y-hidden overflow-hidden">
       <div className="flex flex-col mt-[9rem] mx-5">
         <div className="flex justify-start items-center mx-[3rem] md:mx-[7rem]">
           <div className="pt-0 relative z-10">
@@ -38,7 +38,7 @@ function Hero() {
               {t("hero.headline")}
             </h1>
             <h1
-              className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl text-[#44a3a2] font-bold pt-0 transition-opacity duration-700 ${
+              className={`text-4xl sm:text-4xl md:text-5xl lg:text-6xl text-[#74A173] font-bold pt-0 transition-opacity duration-700 ${
                 isVisible ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -57,7 +57,7 @@ function Hero() {
           <div className="flex justify-center items-center h-full">
             <div className="pb-7">
               <h1
-                className={`text-[12rem] md:text-[11rem] text-[#004243] text-start transition-opacity duration-700 delay-300 ${
+                className={`text-[12rem] md:text-[11rem] text-[#74A173] text-start transition-opacity duration-700 delay-300 ${
                   isVisible ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -99,12 +99,16 @@ function Hero() {
           }`}
           aria-label="Scroll down"
         >
-          <p className="text-sm text-[#44A3A2] font-light tracking-widest mb-2">
+          <p
+            className={`text-sm font-light tracking-widest mb-2 ${
+              scrolled ? "text-[#E5E8DE]" : "text-[#74A173]"
+            }`}
+          >
             {t("hero.scroll")}
           </p>
           <ChevronDown
             className={`h-6 w-6 ${
-              scrolled ? "text-[#44A3A2]" : "text-[#44A3A2]"
+              scrolled ? "text-[#E5E8DE]" : "text-[#74A173]"
             }`}
             size={24}
           />

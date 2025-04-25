@@ -49,7 +49,7 @@ export default function JoinUs() {
   return (
     <section
       id="joinUs"
-      className="py-20 bg-[#F9FAFB] relative overflow-hidden"
+      className="py-20 bg-[#74A173] relative overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden">
         <svg
@@ -85,11 +85,11 @@ export default function JoinUs() {
       </div>
       <div className="container relative mx-auto px-4 pt-10 z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl text-[#004243] font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">
             Join Our Community
           </h2>
           <div className="h-1 w-20 bg-cream mx-auto mb-6"></div>
-          <p className="text-lg text-[#004243] opacity-90">
+          <p className="text-lg text-white opacity-90">
             Want to be part of something meaningful? Join our community of tech
             enthusiasts!
           </p>
@@ -224,11 +224,10 @@ export default function JoinUs() {
             transition-all duration-300
             ${
               isHovered
-                ? "w-45 border-[#44A3A2] bg-transparent text-[#44A3A2]"
-                : "w-56 border-[#004243] bg-[#004243] text-white"
+                ? "w-45 border-[#74A173] bg-transparent text-[#74A173]"
+                : "w-56 border-[#74A173] bg-[#74A173] text-white"
             }
           `}
-                                
                               >
                                 Join Us
                               </div>
@@ -237,7 +236,7 @@ export default function JoinUs() {
             w-12 h-12 border-2 border-solid
             absolute transform rotate-45 top-0 -z-10
             transition-all duration-300
-            ${isHovered ? "border-[#44A3A2]" : "border-transparent"}
+            ${isHovered ? "border-[#74A173]" : "border-transparent"}
           `}
                                 style={{
                                   right: isHovered ? "-25%" : "0",
@@ -249,7 +248,7 @@ export default function JoinUs() {
                                   viewBox="0 0 268.832 268.832"
                                   className="
               w-8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-              transform -rotate-45 fill-[#44A3A2]
+              transform -rotate-45 fill-[#74A173]
               transition-all duration-300
             "
                                 >

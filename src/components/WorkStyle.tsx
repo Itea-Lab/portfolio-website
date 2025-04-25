@@ -30,7 +30,7 @@ export default function WorkStyle() {
   }, []);
 
   return (
-    <section id="workstyle" className="pb-20 bg-white relative overflow-hidden">
+    <section id="workstyle" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute right-0 top-1/4 w-64 h-64 bg-[#f4fff8] rounded-full opacity-70 z-0"></div>
       <div className="absolute left-0 bottom-1/4 w-48 h-48 bg-[#f4fff8] rounded-full opacity-70 z-0"></div>
@@ -66,10 +66,10 @@ export default function WorkStyle() {
                 className="flex flex-col items-center text-center"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-[#f4fff8] to-[#edfff9] rounded-full flex items-center justify-center mb-6 hover:scale-110 hover:shadow-lg transition-all duration-500">
-                  <ItemIcon className="w-8 h-8 text-[#004243]" />
+                <div className="w-20 h-20 bg-[#74a173]/80 rounded-full flex items-center justify-center mb-6 hover:scale-110 hover:shadow-lg transition-all duration-500">
+                  <ItemIcon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[#44a3a2]">
+                <h3 className="text-xl font-bold mb-3 text-[#004243]">
                   {t(`workStyle.${item.key}.title`)}
                 </h3>
                 <p className="text-gray-700">

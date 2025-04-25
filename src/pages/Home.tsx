@@ -9,8 +9,8 @@ function Home() {
     <div className="home-page">
       <Hero />
       <About />
-      <WorkStyle />
       <Community />
+      <WorkStyle />
       <JoinUs />
       <News />
     </div>
