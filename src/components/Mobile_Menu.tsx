@@ -60,11 +60,7 @@ export default function MobileMenu({ isOpen, onClose, onToggle }: MobileMenuProp
           <div className="mt-16"></div>
           <div className="flex items-center justify-between p-4 border-b">
             <Link to="/" className="flex items-center space-x-2">
-              <span
-                className="font-bold text-xl text-[#004243]"
-              >
-                ITea Lab
-              </span>
+              <span className="font-bold text-xl text-[#004243]">ITea Lab</span>
             </Link>
             {/* <label
               className="p-1 rounded-full hover:bg-gray-100 burger"
@@ -85,10 +81,10 @@ export default function MobileMenu({ isOpen, onClose, onToggle }: MobileMenuProp
 
           {/* Navigation */}
           <nav className="flex-1 p-4">
-            <ul className="space-y-4 text-[#44a3a2]">
+            <ul className="space-y-4 text-[#74A173]">
               <li>
                 <Link
-                  to="#career"
+                  to="#about"
                   className="block py-2 font-medium hover:text-[#004243] transition-colors"
                   onClick={onClose}
                 >
@@ -97,7 +93,25 @@ export default function MobileMenu({ isOpen, onClose, onToggle }: MobileMenuProp
               </li>
               <li>
                 <Link
-                  to="#graduates"
+                  to="#community"
+                  className="block py-2 font-medium hover:text-[#004243] transition-colors"
+                  onClick={onClose}
+                >
+                  {t("nav.community")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#news"
+                  className="block py-2 font-medium hover:text-[#004243] transition-colors"
+                  onClick={onClose}
+                >
+                  {t("nav.news")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="#joinUs"
                   className="block py-2 font-medium hover:text-[#004243] transition-colors"
                   onClick={onClose}
                 >

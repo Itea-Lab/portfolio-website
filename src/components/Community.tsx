@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
 import { ActivitySlider } from "./ActivitySlider";
-import { ArrowRight, Github, Calendar } from "lucide-react";
-import event_img from "../assets/480222510_122116886204697575_5941039690238715950_n.jpg";
-import project_img from "../assets/481682077_1017997677053113_5498224049031879829_n.jpg";
 import ws_img1 from "../assets/git_github_workshop.png";
 import ws_img2 from "../assets/docker_workshop.png";
 import { useLanguage } from "../language-context";

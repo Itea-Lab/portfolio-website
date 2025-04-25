@@ -1,4 +1,6 @@
 import { useLanguage } from "../language-context";
+import { Timeline } from "./Timeline";
+import { MobileTimeline } from "./MobileTimeline";
 
 export default function About() {
   const { t } = useLanguage();
@@ -22,6 +24,25 @@ export default function About() {
             {t("vision.title")}
           </h2>
           <p className="text-lg max-w-3xl mx-auto">{t("vision.text")}</p>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 pb-10">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+            Our Journey
+          </h2>
+          <div className="h-1 w-20 bg-[#74A173] mx-auto mb-6"></div>
+          <p className="text-lg text-muted-foreground">
+            From humble beginnings to a thriving community, explore our journey
+            through the years.
+          </p>
+        </div>
+
+        <div className="hidden md:block h-96 pt-40">
+          <Timeline />
+        </div>
+        <div className="md:hidden">
+          <MobileTimeline />
         </div>
       </div>
     </section>

@@ -74,7 +74,7 @@ export default function Layout() {
             </a>
             <a
               href="#news"
-              className="text-lg px-4 font-bold hover:text-[#004243] transition-colors"
+              className="text-lg px-4 font-medium hover:text-[#004243] transition-colors"
             >
               NEWS
             </a>
