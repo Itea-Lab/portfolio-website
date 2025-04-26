@@ -37,7 +37,7 @@ export default function Community() {
   }, []);
 
   return (
-    <section id="community" className="py-20 bg-[#F9FAFB]">
+    <section id="community" className="py-20 bg-white">
       <div className="container mx-auto px-20">
         <ActivitySlider/>
       </div>

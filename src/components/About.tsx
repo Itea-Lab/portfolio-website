@@ -19,19 +19,18 @@ export default function About() {
           <div className="h-1 w-20 bg-[#74A173] mx-auto mb-6"></div>
           <p className="text-lg max-w-3xl mx-auto">{t("aboutUs.content")}</p>
         </div>
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <h2 className="text-2xl text-[#004243] font-bold mb-6 pt-20">
             {t("vision.title")}
           </h2>
           <p className="text-lg max-w-3xl mx-auto">{t("vision.text")}</p>
         </div>
       </div>
-      <div className="container mx-auto px-4 pb-10">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            Our Journey
+      <div className="container mx-auto px-4 pb-0 md:pb-40">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <h2 className="text-2xl text-[#004243] font-bold mb-6 pt-20">
+            OUR JOURNEY
           </h2>
-          <div className="h-1 w-20 bg-[#74A173] mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground">
             From humble beginnings to a thriving community, explore our journey
             through the years.

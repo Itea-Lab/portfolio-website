@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 interface TimelineItem {
   title: string;
@@ -7,37 +7,66 @@ interface TimelineItem {
 }
 
 export function MobileTimeline() {
+  const [isVisible, setIsVisible] = useState(false);
+  const lineRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const timeline = lineRef.current;
+      if (timeline) {
+        const rect = timeline.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+        setIsVisible(isInView);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && lineRef.current) {
+      lineRef.current.style.height = "0%";
+      setTimeout(() => {
+        if (lineRef.current) {
+          lineRef.current.style.transition = "height 1.5s ease-in-out";
+          lineRef.current.style.height = "100%";
+        }
+      }, 100);
+    }
+  }, [isVisible]);
   const timelineItems: TimelineItem[] = [
     {
       title: "Conception",
-      year: "2015",
+      year: "2023",
       description:
-        "The initial idea for a technology-focused student community was born from a small group of passionate computer science students.",
+        "Idea of an association for CS students suggested by Ms. Pascale Quester",
     },
     {
       title: "IT Student Association",
-      year: "2017",
+      year: "2024",
       description:
-        "Formalized as an official student association with regular meetups, workshops, and small-scale projects.",
+        "Formed and recruited Gen 1 in Feb 2024, focusing on doing projects.\nRepresented Swinburne Vietnam CS at ACS accreditation",
     },
     {
-      title: "IT Lab",
-      year: "2019",
+      title: "Swinburne IT Lab",
+      year: "2024",
       description:
-        "Expanded into a dedicated physical space with equipment and resources for hands-on learning and project development.",
+        "Represented Swinburne Vietnam CS at ExDays and Conception Day. We participated in FPT ResFes 2024 and Akathon Jan 2024",
     },
     {
-      title: "New IT Community",
-      year: "2022",
+      title: "ITea Lab Community",
+      year: "2025",
       description:
-        "Evolved beyond the university to include industry professionals, alumni, and community members with a focus on real-world impact.",
+        "Re-branded as CS community. Organised workshops and began recruiting Gen 2",
     },
     {
       title: "Future Roadmap",
-      year: "2025",
+      year: "Present",
       description:
-        "Planning expansion to multiple locations, online learning platforms, and partnerships with tech companies for internship opportunities.",
+        "Become semi-independent, collaborating with outside firms while representing CS students at Swinburne Vietnam",
     },
   ];
 
@@ -46,28 +75,62 @@ export function MobileTimeline() {
       <div className="relative">
         {/* Vertical timeline line */}
         <div
-          className="absolute left-4 top-0 w-1 bg-[#74A173]/30 h-full"
-          style={{ transformOrigin: "top" }}
+          ref={lineRef}
+          className="absolute left-4 top-0 w-1 bg-[#74A173]/30"
+          style={{
+            transformOrigin: "top",
+            height: "0%",
+          }}
         />
 
         {/* Timeline items */}
         <div className="relative ml-12">
           {timelineItems.map((item, index) => (
-            <div key={index} className="mb-10 relative">
+            <div
+              key={index}
+              className="mb-10 relative"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateX(0)" : "translateX(-20px)",
+                transition: "opacity 0.5s ease, transform 0.5s ease",
+                transitionDelay: `${index * 200 + 800}ms`,
+              }}
+            >
               {/* Timeline dot */}
-              <div className="absolute -left-10 top-2 w-5 h-5 rounded-full bg-[#74A173] z-10 shadow-lg" />
+              <div
+                className="absolute -left-10 top-2 w-5 h-5 rounded-full bg-[#74A173] z-10 shadow-lg"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? "scale(1)" : "scale(0)",
+                  transition: "opacity 0.5s ease, transform 0.5s ease",
+                  transitionDelay: `${index * 200 + 600}ms`,
+                }}
+              />
 
               {/* Year marker */}
-              <div className="text-[#74A173] font-bold text-sm mb-1">
+              <div
+                className="text-[#74A173] font-bold text-sm mb-1"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transition: "opacity 0.5s ease",
+                  transitionDelay: `${index * 200 + 700}ms`,
+                }}
+              >
                 {item.year}
               </div>
 
               {/* Content */}
-              <div className="bg-white p-4 rounded-lg shadow-md">
+              <div
+                className="bg-white p-4 rounded-lg shadow-md"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? "translateY(0)" : "translateY(20px)",
+                  transition: "opacity 0.5s ease, transform 0.5s ease",
+                  transitionDelay: `${index * 200 + 900}ms`,
+                }}
+              >
                 <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
+                <p className="text-sm text-gray-600">{item.description}</p>
               </div>
             </div>
           ))}
