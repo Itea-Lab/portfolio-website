@@ -86,12 +86,11 @@ export default function JoinUs() {
       <div className="container relative mx-auto px-4 pt-10 z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">
-            Join Our Community
+            {t("community.title")}
           </h2>
-          <div className="h-1 w-20 bg-cream mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-white mx-auto mb-6"></div>
           <p className="text-lg text-white opacity-90">
-            Want to be part of something meaningful? Join our community of tech
-            enthusiasts!
+            {t("community.text")}
           </p>
         </div>
         <div className="max-w-6xl mx-auto bg-mint-50 rounded-xl overflow-hidden shadow-lg">

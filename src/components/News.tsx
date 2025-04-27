@@ -16,8 +16,7 @@ export default function News() {
       date: "April 23, 2025",
       title: "Congratulations to our talent members!",
       content:
-        "Nguyen Vinh Khang (ITea Lab Gen 1) and Truong Duc Sang (ITea Lab Gen 2) were featured in Thanh Nien newspaper for developing an AI tool that identifies online scam websites. This is part of the Chongluadao.vn project, founded by cybersecurity expert Mr. Ngo Minh Hieu. \n Lab would like to send our best wishes to them and hope them with a further success on their path.",
-      alt: "ITea News image",
+        "Nguyen Vinh Khang (ITea Lab Gen 1) and Truong Duc Sang (ITea Lab Gen 2) were recently featured in Thanh Nien newspaper for their outstanding contribution to the Chongluadao.vn project. Together, they developed an AI tool designed to detect online scam websites, under the guidance of cybersecurity expert Mr. Ngo Minh Hieu.\n We are incredibly proud of their achievement and wish them continued success in their journey ahead!",
       url: "https://www.facebook.com/ITeaLabTeam",
     },
     {
@@ -27,7 +26,7 @@ export default function News() {
       date: "April 19, 2025",
       title: "Partnership Announcement",
       content:
-        "ITea Lab is excited to partner with 3DIoT - the leading community with mutual passion, knowledge on IoT, especially in embedded technology. With ITea Lab’s strength in software development and operations, we are aiming to exchange knowledge, organize valuable workshops, and collaborate on projects together.",
+        "ITea Lab is thrilled to announce our partnership with 3DIoT — a leading community passionate about IoT and embedded technologies. By combining 3DIoT’s expertise and ITea Lab’s strengths in software development and operations, we aim to foster knowledge exchange, host impactful workshops, and collaborate on exciting projects together.",
       alt: "ITea News image",
       url: "https://www.facebook.com/ITeaLabTeam",
     },
@@ -48,14 +47,14 @@ export default function News() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <section className="py-20 bg-[#F9FAFB]" id="news">
+    <section className="py-10 bg-[#F9FAFB]" id="news">
       <div className="container mx-auto px-4 mb-16">
-        <h2 className="text-3xl pt-20 md:text-4xl font-bold mb-4 text-center">
-          ITea Lab News
+        <h2 className="text-3xl text-[#004243] pt-20 md:text-4xl font-bold mb-4 text-center">
+          {t("news.title")}
         </h2>
         <div className="h-1 w-20 bg-[#74A173] mx-auto mb-6"></div>
         <p className="text-lg text-muted-foreground text-center mb-6">
-          Stay updated with the latest happenings at our community.
+          {t("news.text")}
         </p>
 
         <div

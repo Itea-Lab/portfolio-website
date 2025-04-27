@@ -3,6 +3,8 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Code, Coffee, Users } from "lucide-react";
 import workshop_img from "../assets/480222510_122116886204697575_5941039690238715950_n.jpg";
 import project_img from "../assets/481682077_1017997677053113_5498224049031879829_n.jpg";
+import bonding_img from "../assets/Screenshot 2025-04-27 221236.png"
+import { useLanguage } from "../language-context";
 
 export interface Activity {
   title: string;
@@ -17,6 +19,7 @@ interface ActivitySliderProps {
 
 export function ActivitySlider({ activities }: ActivitySliderProps) {
   const [currentActivity, setCurrentActivity] = useState(0);
+  const { t } = useLanguage();
 
   const defaultActivities: Activity[] = [
     {
@@ -30,7 +33,7 @@ export function ActivitySlider({ activities }: ActivitySliderProps) {
       title: "Team Bonding",
       description:
         "Fun activities and events that strengthen relationships and build a supportive community.",
-      image: "/placeholder.svg?height=400&width=600&text=Team+Bonding",
+      image: bonding_img,
       icon: <Users className="h-5 w-5 text-white" />,
     },
     {
@@ -48,16 +51,12 @@ export function ActivitySlider({ activities }: ActivitySliderProps) {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Text Column */}
       <div className="max-w-xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">WHAT WE DO</h2>
+        <h2 className="text-3xl text-[#004243] md:text-4xl font-bold mb-4">
+          {t("activity.title")}
+        </h2>
         <div className="h-1 w-20 bg-[#74A173] mb-6"></div>
         <p className="text-lg text-muted-foreground mb-8">
-          We are a passionate group of tech enthusiasts dedicated to learning,
-          building, and sharing knowledge.
-        </p>
-        <p className="text-muted-foreground mb-8">
-          Our mission is to create an inclusive space where technology
-          enthusiasts can learn, collaborate, and innovate together while
-          building meaningful connections.
+          {t("activity.text")}
         </p>
         {/* Navigation Buttons */}
         <div className="flex space-x-4">

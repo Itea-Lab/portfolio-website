@@ -9,9 +9,9 @@ export default function Language_Selector({scrolled}: LanguageSelectorProps) {
     <div className="absolute left-4 top-full mt-4 z-50">
       <div className="flex flex-col bg-white rounded-full shadow-md overflow-hidden border border-gray-200">
         <button
-          onClick={() => setLanguage("VN")}
+          onClick={() => setLanguage("JP")}
           className={`w-10 h-10 flex items-center justify-center text-sm transition-colors ${
-            language === "VN" ? "bg-[#004243] text-white" : "hover:bg-gray-100"
+            language === "JP" ? "bg-[#004243] text-white" : "hover:bg-gray-100"
           }`}
         >
           JP

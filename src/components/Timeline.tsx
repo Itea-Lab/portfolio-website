@@ -110,8 +110,8 @@ export function Timeline() {
               <div
                 className={`absolute ${
                   item.position === "top"
-                    ? "md:transform md:translate-x-[45%]"
-                    : "md:transform md:translate-x-[-45%]"
+                    ? "md:transform md:translate-x-[-10%]"
+                    : "md:transform md:translate-x-[-10%]"
                 } w-5 h-5 rounded-full bg-[#74A173] mx-auto mb-2 mt-2 shadow-lg`}
                 style={{
                   opacity: isVisible ? 1 : 0,
@@ -127,8 +127,8 @@ export function Timeline() {
               <div
                 className={`w-56 bg-white p-4 rounded-lg shadow-md mx-auto ${
                   item.position === "top"
-                    ? "md:bottom-0 md:transform md:translate-y-1/2"
-                    : "md:top-0 md:transform md:-translate-y-[9.5rem]"
+                    ? "absolute -bottom-10"
+                    : "absolute top-24"
                 }`}
                 style={{
                   opacity: isVisible ? 1 : 0,

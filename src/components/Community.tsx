@@ -3,6 +3,7 @@ import { ActivitySlider } from "./ActivitySlider";
 import ws_img1 from "../assets/git_github_workshop.png";
 import ws_img2 from "../assets/docker_workshop.png";
 import { useLanguage } from "../language-context";
+import { CalendarClock } from "lucide-react";
 
 
 export default function Community() {
@@ -39,10 +40,10 @@ export default function Community() {
   return (
     <section id="community" className="py-20 bg-white">
       <div className="container mx-auto px-20">
-        <ActivitySlider/>
+        <ActivitySlider />
       </div>
-      <div className="container mx-auto px-[10rem] pt-20">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="container mx-auto px-20 pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {events.map((event, index) => (
             <div
               key={event.name}
@@ -58,7 +59,18 @@ export default function Community() {
               </div>
             </div>
           ))}
-          <div className="flex aspect-square overflow-hidden rounded-lg group"></div>
+          <div className="relative aspect-square overflow-hidden rounded-lg bg-[#74A173]/20 flex flex-col items-center justify-center p-6 text-center">
+            <div className="mb-4 bg-[#74A173]/20 p-4 rounded-full">
+              <CalendarClock className="h-10 w-10 text-[#74A173]" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">
+              Stay Tuned!
+            </h3>
+            <p className="text-gray-700">
+              More exciting workshops and events coming soon. Join our community
+              to be the first to know!
+            </p>
+          </div>
         </div>
       </div>
     </section>

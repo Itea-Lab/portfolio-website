@@ -33,7 +33,7 @@ export default function Layout() {
             : "bg-transparent py-4"
         }`}
       >
-        <div className="container px-7 mx-auto md:px-[6rem] py-4 flex justify-between items-center">
+        <div className="container px-7 mx-auto md:px-[6rem] flex justify-between items-center">
           <div className="flex flex-row items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img
@@ -64,31 +64,31 @@ export default function Layout() {
               href="#about"
               className="text-lg px-4 font-medium hover:text-[#004243] transition-colors"
             >
-              ABOUT
+              {t("nav.about")}
             </a>
             <a
               href="#community"
               className="text-lg px-4 font-medium hover:text-[#004243] transition-colors"
             >
-              COMMUNITY
+              {t("nav.community")}
             </a>
             <a
               href="#news"
               className="text-lg px-4 font-medium hover:text-[#004243] transition-colors"
             >
-              NEWS
+              {t("nav.news")}
             </a>
             <a
               href="#joinUs"
               className="text-lg px-4 font-bold hover:text-[#004243] transition-colors"
             >
-              JOIN US
+              {t("nav.joinUs")}
             </a>
           </nav>
         </div>
         <Language_Selector scrolled={scrolled} />
       </header>
-      <div className="md:hidden fixed top-10 right-12 z-[60]">
+      <div className="md:hidden fixed top-6 right-12 z-[60]">
         <label
           className="p-1 rounded-full hover:bg-gray-100 burger"
           htmlFor="burger"
@@ -186,7 +186,7 @@ export default function Layout() {
               </div>
               <div className="flex items-center">
                 <p className="w-[70%] md:w-[80%]">
-                  A35 Bach Dang street, ward 14, Tan Binh district, Ho Chi Minh
+                  A35 Bach Dang street, Tan Binh district, Ho Chi Minh
                   city, Vietnam
                 </p>
               </div>

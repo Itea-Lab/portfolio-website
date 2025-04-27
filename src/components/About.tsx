@@ -29,11 +29,10 @@ export default function About() {
       <div className="container mx-auto px-4 pb-0 md:pb-40">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <h2 className="text-2xl text-[#004243] font-bold mb-6 pt-20">
-            OUR JOURNEY
+            {t("timeline.title")}
           </h2>
-          <p className="text-lg text-muted-foreground">
-            From humble beginnings to a thriving community, explore our journey
-            through the years.
+          <p className="text-lg text-black">
+            {t("timeline.text")}
           </p>
         </div>
 
