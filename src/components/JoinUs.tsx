@@ -8,7 +8,7 @@ export default function JoinUs() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    interest: "careers", // Default value
+    interest: "careers",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -89,9 +89,7 @@ export default function JoinUs() {
             {t("community.title")}
           </h2>
           <div className="h-1 w-20 bg-white mx-auto mb-6"></div>
-          <p className="text-lg text-white opacity-90">
-            {t("community.text")}
-          </p>
+          <p className="text-lg text-white opacity-90">{t("community.text")}</p>
         </div>
         <div className="max-w-6xl mx-auto bg-mint-50 rounded-xl overflow-hidden shadow-lg">
           <div className="grid md:grid-cols-2 gap-0">
@@ -186,7 +184,7 @@ export default function JoinUs() {
                       {isSubmitting ? (
                         <span className="flex items-center">
                           <svg
-                            className="animate-spin -ml-1 mr-2 h-4 w-4 text-black"
+                            className="animate-spin -ml-1 mr-2 h-4 w-4 text-[#004243]"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
