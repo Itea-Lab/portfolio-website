@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./language-context";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -10,14 +10,14 @@ function App() {
     <>
       <LanguageProvider>
         <div className="flex min-h-screen flex-col">
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
               </Route>
               <Route path="*" element={<Error404 />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </div>
       </LanguageProvider>
     </>
