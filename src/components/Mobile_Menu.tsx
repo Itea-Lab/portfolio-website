@@ -7,10 +7,9 @@ import { useLanguage } from "../language-context";
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  onToggle: () => void;
 }
 
-export default function MobileMenu({ isOpen, onClose, onToggle }: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const { t } = useLanguage();
 
   // Close menu when pressing Escape key

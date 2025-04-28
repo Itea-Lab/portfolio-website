@@ -1,7 +1,6 @@
 import { useLanguage } from "../language-context";
 import { useState } from "react";
 import { Send } from "lucide-react";
-import { Link } from "react-router-dom";
 import community_image from "../assets/square_lab.png";
 export default function JoinUs() {
   const { t } = useLanguage();

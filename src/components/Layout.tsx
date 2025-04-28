@@ -5,7 +5,6 @@ import Language_Selector from "./Language_Selector";
 import MobileMenu from "./Mobile_Menu";
 import { Github, Facebook, Linkedin, Mail } from "lucide-react";
 import logo from "../assets/icon_transparent.png";
-import icon from "../assets/clipart_leaf.svg";
 
 export default function Layout() {
   const { t } = useLanguage();
@@ -110,7 +109,6 @@ export default function Layout() {
       <MobileMenu
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}
-        onToggle={toggleMenu}
       />
       <main className="flex-1">
         <Outlet />
