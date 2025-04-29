@@ -10,7 +10,6 @@ export default function News() {
 
   const items = [
     {
-      key: "events",
       icon: Newspaper,
       image: event1,
       date: "April 23, 2025",
@@ -20,7 +19,6 @@ export default function News() {
       url: "https://www.facebook.com/ITeaLabTeam",
     },
     {
-      key: "events",
       icon: Newspaper,
       image: event2,
       date: "April 19, 2025",
@@ -67,7 +65,7 @@ export default function News() {
 
             return (
               <div
-                key={item.key}
+                key={index}
                 className="bg-white hover:bg-[#74a173]/10 p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-500 hover:-translate-y-1"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
@@ -91,7 +89,7 @@ export default function News() {
                   to={item.url}
                   className="inline-flex items-center text-md font-medium hover:text-[#74A173] hover:bg-transparent border-2 hover:border-[#74a173] transition-colors group bg-[#74a173] text-white px-3 py-1 rounded-full"
                 >
-                  {t(`community.${item.key}.link`)}
+                  {t(`community.events.link`)}
                   <ArrowRight
                     size={16}
                     className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1"

@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-[linear-gradient(to_bottom_right,_#E3E8DD,_#F6F3EE_50%,_#FFFFFF_100%)] relative overflow-hidden"
+      className="py-10 bg-[linear-gradient(to_bottom_right,_#E3E8DD,_#F6F3EE_50%,_#FFFFFF_100%)] relative overflow-hidden"
     >
       <div className="bg-[url(../src/assets/clipart_leaf.png)] bg-no-repeat left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute w-80 h-80 z-0 opacity-20"></div>
       <div className="container mx-auto px-4 pt-20">

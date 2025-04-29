@@ -1,6 +1,4 @@
-"use client";
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useLanguage } from "../language-context";
 
@@ -11,6 +9,11 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const { t } = useLanguage();
+  const navigate = useNavigate();
+
+  const handleNavigation = (sectionId: string) => {
+    navigate("/", { state: { scrollTo: sectionId } });
+  };
 
   // Close menu when pressing Escape key
   useEffect(() => {
@@ -80,42 +83,50 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
           {/* Navigation */}
           <nav className="flex-1 p-4">
-            <ul className="space-y-4 text-[#74A173]">
+            <ul className="space-y-4 text-[#74A173] cursor-pointer">
               <li>
-                <Link
-                  to="#about"
+                <a
                   className="block py-2 font-medium hover:text-[#004243] transition-colors"
-                  onClick={onClose}
+                  onClick={() => {
+                    handleNavigation("about");
+                    onClose();
+                  }}
                 >
                   {t("nav.about")}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#community"
+                <a
                   className="block py-2 font-medium hover:text-[#004243] transition-colors"
-                  onClick={onClose}
+                  onClick={() => {
+                    handleNavigation("community");
+                    onClose();
+                  }}
                 >
                   {t("nav.community")}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#news"
+                <a
                   className="block py-2 font-medium hover:text-[#004243] transition-colors"
-                  onClick={onClose}
+                  onClick={() => {
+                    handleNavigation("news");
+                    onClose();
+                  }}
                 >
                   {t("nav.news")}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#joinUs"
+                <a
                   className="block py-2 font-medium hover:text-[#004243] transition-colors"
-                  onClick={onClose}
+                  onClick={() => {
+                    handleNavigation("joinUs");
+                    onClose();
+                  }}
                 >
                   {t("nav.joinUs")}
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>

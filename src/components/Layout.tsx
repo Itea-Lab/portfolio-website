@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useLanguage } from "../language-context";
 import Language_Selector from "./Language_Selector";
@@ -14,6 +14,11 @@ export default function Layout() {
     // console.log("isMenuOpen:", isMenuOpen);
   };
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (sectionId: string) => {
+    navigate("/", { state: { scrollTo: sectionId } });
+  };
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -34,7 +39,10 @@ export default function Layout() {
       >
         <div className="container px-7 mx-auto md:px-[6rem] flex justify-between items-center">
           <div className="flex flex-row items-center">
-            <Link to="/" className="flex items-center space-x-2">
+            <div
+              onClick={() => navigate("/")}
+              className="flex items-center space-x-2 cursor-pointer"
+            >
               <img
                 src={logo}
                 alt="ITea Lab Logo"
@@ -49,37 +57,45 @@ export default function Layout() {
               >
                 ITea Lab
               </span>
-            </Link>
+            </div>
           </div>
 
           <nav
-            className={`hidden md:flex items-center text-[#74A173] ${
+            className={`hidden md:flex items-center text-[#74A173] cursor-pointer ${
               scrolled
                 ? "divide-x divide-[transparent]"
                 : "divide-x divide-[#44a3a2]"
             }`}
           >
             <a
-              href="#about"
               className="text-lg px-4 font-medium hover:text-[#004243] transition-colors"
+              onClick={() => {
+                handleNavigation("about");
+              }}
             >
               {t("nav.about")}
             </a>
             <a
-              href="#community"
               className="text-lg px-4 font-medium hover:text-[#004243] transition-colors"
+              onClick={() => {
+                handleNavigation("community");
+              }}
             >
               {t("nav.community")}
             </a>
             <a
-              href="#news"
               className="text-lg px-4 font-medium hover:text-[#004243] transition-colors"
+              onClick={() => {
+                handleNavigation("news");
+              }}
             >
               {t("nav.news")}
             </a>
             <a
-              href="#joinUs"
               className="text-lg px-4 font-bold hover:text-[#004243] transition-colors"
+              onClick={() => {
+                handleNavigation("joinUs");
+              }}
             >
               {t("nav.joinUs")}
             </a>
@@ -106,10 +122,7 @@ export default function Layout() {
         </label>
       </div>
 
-      <MobileMenu
-        isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
-      />
+      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       <main className="flex-1">
         <Outlet />
       </main>
@@ -184,8 +197,8 @@ export default function Layout() {
               </div>
               <div className="flex items-center">
                 <p className="w-[70%] md:w-[80%]">
-                  A35 Bach Dang street, Tan Binh district, Ho Chi Minh
-                  city, Vietnam
+                  A35 Bach Dang street, Tan Binh district, Ho Chi Minh city,
+                  Vietnam
                 </p>
               </div>
             </div>

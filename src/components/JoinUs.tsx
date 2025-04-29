@@ -62,21 +62,21 @@ export default function JoinUs() {
               cx="250"
               cy="250"
               r="200"
-              stroke="currentColor"
+              stroke="white"
               strokeWidth="2"
             />
             <circle
               cx="250"
               cy="250"
               r="150"
-              stroke="currentColor"
+              stroke="white"
               strokeWidth="2"
             />
             <circle
               cx="250"
               cy="250"
               r="100"
-              stroke="currentColor"
+              stroke="white"
               strokeWidth="2"
             />
           </g>
@@ -109,11 +109,10 @@ export default function JoinUs() {
                     <Send className="h-8 w-8 text-[#004243]" />
                   </div>
                   <h3 className="text-xl text-[#004243] font-bold mb-2">
-                    Application Received!
+                    Form Closed
                   </h3>
                   <p className="text-[#004243]">
-                    Thank you for your interest in joining our community. We'll
-                    get back to you soon.
+                    Thank you for your interest in joining our community. We will reopen the form soon, stay                    tuned!
                   </p>
                 </div>
               ) : (

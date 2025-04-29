@@ -49,7 +49,7 @@ export function ActivitySlider({ activities }: ActivitySliderProps) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* Text Column */}
+      {/* Text*/}
       <div className="max-w-xl">
         <h2 className="text-3xl text-[#004243] md:text-4xl font-bold mb-4">
           {t("activity.title")}
@@ -83,7 +83,7 @@ export function ActivitySlider({ activities }: ActivitySliderProps) {
         </div>
       </div>
 
-      {/* Image Slide Column */}
+      {/* Image Slide*/}
       <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
         {displayActivities.map((activity, index) => (
           <div
@@ -116,7 +116,7 @@ export function ActivitySlider({ activities }: ActivitySliderProps) {
           </div>
         ))}
 
-        {/* Slide Indicators */}
+        {/* Slide Indicators*/}
         <div className="absolute bottom-6 right-6 flex space-x-2">
           {displayActivities.map((_, index) => (
             <button
