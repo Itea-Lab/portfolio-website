@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Code, Coffee, Users } from "lucide-react";
 import workshop_img from "../assets/480222510_122116886204697575_5941039690238715950_n.jpg";
 import project_img from "../assets/481682077_1017997677053113_5498224049031879829_n.jpg";
-import bonding_img from "../assets/Screenshot 2025-04-27 221236.png"
+// import bonding_img from "../assets/Screenshot 2025-04-27 221236.png"
 import { useLanguage } from "../language-context";
 
 export interface Activity {
@@ -33,7 +33,7 @@ export function ActivitySlider({ activities }: ActivitySliderProps) {
       title: "Team Bonding",
       description:
         "Fun activities and events that strengthen relationships and build a supportive community.",
-      image: bonding_img,
+      image: workshop_img,
       icon: <Users className="h-5 w-5 text-white" />,
     },
     {
