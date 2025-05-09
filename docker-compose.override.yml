@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: 
+      context: .
+      target: dev
+    image: portfolio-website:dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./public:/usr/src/app/public
+    environment:
+      - NODE_ENV=development
+      - VITE_API_URL=http://localhost:3000
+      - BUN_INSTALL_CACHE=/bun/install/cache

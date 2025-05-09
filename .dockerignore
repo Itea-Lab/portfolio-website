@@ -1,0 +1,34 @@
+# Node modules (install fresh in image)
+node_modules
+
+# Local build output (built inside Docker build)
+dist/
+build/
+
+# Docker and Compose files
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Git metadata and config
+.git
+.gitignore
+
+# Documentation and configs not needed in image
+README.md
+LICENSE
+
+# IDE/editor configs
+.vscode/
+.idea/
+
+# Local env files and editorconfig
+.env
+.env.*.local
+.editorconfig
+
+# Logs and tests
+*.log
+coverage*
+test/
+tests/

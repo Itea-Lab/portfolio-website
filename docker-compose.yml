@@ -1,0 +1,6 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: portfolio-website
+    restart: unless-stopped
